@@ -13,7 +13,7 @@ https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp
 <h2><p>Based on Debian Server Latest 64 Bit </p></h2>
 </br>
 <h3>UPDATES FOR UBUNTU SERVER LATEST</h3>
-* Updated NGINX to the Latest Version - NGINX v1.19.7</br>
+* Updated NGINX to the Latest Version - NGINX v1.19.8</br>
 * COMPILED WITH NGINX RTMP MODULE</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXACUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
@@ -21,7 +21,7 @@ https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp
 * ALL UBUNTU PACKAGES UPDATED</br>
 </hr>
 <h3>UPDATES FOR DEBIAN SERVER LATEST</h3>
-* Updated NGINX to the Latest Version - NGINX v1.19.7</br>
+* Updated NGINX to the Latest Version - NGINX v1.19.8</br>
 *  COMPILED WITH ARUT's RTMP NGINX MODULE</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXACUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
