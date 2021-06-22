@@ -1,5 +1,5 @@
 <h1>NGINX-based Media Streaming Server / RTMP / FFMPEG SERVER</h1>
-https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp
+<a href="https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp" target="_blank">VISIT MY DOCKERHUB IMAGE</a>
 </hr>
 <h3>PLEASE NOTE: I LIKE TO DO THINGS WITH DOCKER MANUALLY <br></h3>
 </h2>SO THESE WILL CONTAIN SCRIPTS TO MAKE LIFE EASIER</h2>
