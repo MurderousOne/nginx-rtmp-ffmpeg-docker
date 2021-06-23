@@ -1,14 +1,13 @@
 <h1>NGINX-based Media Streaming Server / RTMP / FFMPEG SERVER</h1>
-<a href="https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp" target="_blank">VISIT MY DOCKERHUB IMAGE</a>
+<a href="https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp" target="_blank">DOCKERHUB IMAGE</a>
 </hr>
-<h3>PLEASE NOTE: I LIKE TO DO THINGS WITH DOCKER MANUALLY <br></h3>
-</h2>SO THESE WILL CONTAIN SCRIPTS TO MAKE LIFE EASIER</h2>
+<h1>NGINX-based Media Streaming Server / RTMP / FFMPEG SERVER</h1>
+</hr>
+</h2>IMAGE WILL CONTAIN SIMPLE BASH SCRIPTS TO MAKE LIFE EASIER</h2>
 <p>THIS DOCKER IMAGE WILL WORK WITH 64 Bit Systems.</br>
 <b>DOCKER IMAGE MAY NOT WORK WITH  32bit Systems.</b></br>
 <p>Image can be attached too and is fully customizable.</p>
 <p>Image has simple pre-installed bash scripts to make running the server easier.</p>
-
-<h1>NGINX-based Media Streaming Server</h1>
 <h2><p>Based on Ubuntu Server Latest 64 Bit </p></h2>
 <h2><p>Based on Debian Server Latest 64 Bit </p></h2>
 </br>
@@ -46,7 +45,6 @@
 <p>
 	<span style="color:#3498db;"><strong>ENJOY!&nbsp;</strong></span>
 </p>
-<h1> DOWNLOAD NGINX-based Media Streaming Server Docker Image, Update, & Run Your own RTMP Streaming DOCKER Container</h1>
 
 <h1>NGINX-based Media Streaming Server / RTMP / FFMPEG SERVER</h1>
 
@@ -54,21 +52,26 @@
 <p>The docker image is also unlocked and contains pre-made bash scripts to run your streaming server even easier than our manual setup.</p>
 <p>Docker also allows better performance and less resources to your computer / server.</p>
 
-<h2> Install Docker</h2>
+<h2> Install Docker on Linux</h2>
 
-<a href="https://docs.docker.com/get-docker/" target="_blank">GET DOCKER</a>
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+
+<a href="https://docs.docker.com/get-docker/" target="_blank">INSTALL DOCKER FOR OTHER NON-LINUX OS's</a>
 
 <h2>RUN THE DOCKER CONTAINER WITH DOCKER COMPOSE</h2>
 
-<h3>install Docker Compose on Linux</h3>
+<h3>Install Docker Compose on Linux</h3>
 
 ```
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 ```
-<p>To install Docker Compose on other non-Linux OS's <a href="https://docs.docker.com/compose/install/" target="_blank">Click here</a></p>
+<p><a href="https://docs.docker.com/compose/install/" target="_blank">To install Docker Compose on other non-Linux OS's </a></p>
 
-
-<h2>Downloading and Creating your container Using docker-compose (Ubuntu Image)</h2>
+<h1>Downloading and Creating your container Using docker-compose (Ubuntu Image)</h1>
 
 <h3>Create a new Directory</h3>
 
@@ -91,7 +94,7 @@ cd nginx-rtmp
 nano docker-compose.yml
 ```
 
-<p>add the code below for ubuntu and save</p>
+<p>COPY and PASTE the code below for Ubuntu OS Container and Save</p>
 
 ```
 version: "3"
@@ -128,7 +131,7 @@ cd nginx-rtmp
 nano docker-compose.yml
 ```
 
-<p>add the code below for debian and save</p>
+<p>COPY and PASTE the code below for Debian OS Container and Save</p>
 
 ```
 version: "3"
@@ -176,7 +179,6 @@ docker attach nginx-rtmp-server
 <h2>Edit and Add your Stream Key and URL's & Set your RTMP Servers Stream Key to the RTMP Config</h2>
 <p>Stream URL / Key from Restream.io, Youtube, Twitch</p>
 <p>(Example: - Change -> push rtmp://live.restream.io/streamkey;)</p>
-
 <p>SETTING RTMP SERVERS STREAM KEY  (Can be named anything, No spaces.)</h2>
 <p>(EXAMPLE: Change -> rtmp://127.0.0.1/live/YOURSTREAMKEY to rtmp://127.0.0.1/live/ANY-KEYNAME-YOU-WANT)</p>
 
@@ -188,6 +190,18 @@ docker attach nginx-rtmp-server
 
 ```
 ./start-rtmp
+```
+
+<h2>STOP THE RTMP SERVER</h2>
+
+```
+./stop-rtmp
+```
+
+<h2>RESTART THE RTMP SERVER</h2>
+
+```
+./restart-rtmp
 ```
 
 <h2>EXIT THE CONTAINER WHILE LEAVING IT RUNNING</h2>
@@ -203,7 +217,7 @@ HOLD: CRTL + p + q 
 <p>Any ol Gaming PC with OBS Studio & NVENC encoding.</p>
 <p>In OBS, i use NVENC encoding and I use my monitor’s native resolution (1080p).</p> 
 <p>Using OBS Studio, in your broadcast settings you need to use the “Custom” streaming service.</p>
-<a href=""><img src="https://m1-gamingz.com/wp-content/uploads/2021/03/Screenshot-2021-03-27-130647-live.png" alt="">
+<a href=""><img src="https://m1-gamingz.com/wp-content/uploads/2021/03/Screenshot-2021-03-27-130647-live.png" alt="M1GC">
 </a>
 
 <p>The Streaming URL will be something like rtmp://192.168.1.100/live (Use your own server’s IP).</p>
