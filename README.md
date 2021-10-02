@@ -70,7 +70,7 @@ sudo sh get-docker.sh
 <h3>Install Docker Compose on Linux</h3>
 
 ```
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.0.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 <p><a href="https://docs.docker.com/compose/install/" target="_blank">To install Docker Compose on other non-Linux OS's </a></p>
