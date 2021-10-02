@@ -1,30 +1,34 @@
 <h1>NGINX-based Media Streaming Server / RTMP / FFMPEG SERVER</h1>
-<a href="https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp" target="_blank">DOCKERHUB IMAGE</a>
 </hr>
-<h1>NGINX-based Media Streaming Server / RTMP / FFMPEG SERVER</h1>
-</hr>
-</h2>IMAGE WILL CONTAIN SIMPLE BASH SCRIPTS TO MAKE LIFE EASIER</h2>
+</h2>IMAGE WILL CONTAIN REALLY SIMPLE BASH SCRIPTS TO MAKE LIFE EASIER. NOTHING CODE SAVY</h2>
 <p>THIS DOCKER IMAGE WILL WORK WITH 64 Bit Systems.</br>
 <b>DOCKER IMAGE MAY NOT WORK WITH  32bit Systems.</b></br>
 <p>Image can be attached too and is fully customizable.</p>
 <p>Image has simple pre-installed bash scripts to make running the server easier.</p>
-<h2><p>Based on Ubuntu Server Latest 64 Bit </p></h2>
-<h2><p>Based on Debian Server Latest 64 Bit </p></h2>
+<h2><p>Based on Ubuntu Server 20.04.3 LTS 64 Bit </p></h2>
+<h2><p>Based on Debian 11 Bullseye 64 Bit </p></h2>
+<h2><p>Based on Ubuntu Server 20.04.3 LTS ARM64 for Raspberry Pi4 / Pi400 </p></h2>
 </br>
-<h3>UPDATES FOR UBUNTU SERVER LATEST</h3>
-* Updated NGINX to the Latest Version - NGINX v1.20.1</br>
-* COMPILED WITH NGINX RTMP MODULE</br>
+<h1>UPDATES FOR UBUNTU SERVER 20.04.3 LTS</h3>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.2</br>
+* COMPILED WITH FFMPEG 4.2.4 "Ada"</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
-* EASY SHELL EXACUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
-* FFMPEG LATEST STABLE VERSION</br>
+* EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
 * ALL UBUNTU PACKAGES UPDATED</br>
 </hr>
-<h3>UPDATES FOR DEBIAN SERVER LATEST</h3>
-* Updated NGINX to the Latest Version - NGINX v1.20.1</br>
-*  COMPILED WITH ARUT's RTMP NGINX MODULE</br>
+<h1>UPDATES FOR DEBIAN 11 Bullseye</h3>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.2</br>
+* COMPILED WITH FFMPEG 4.4.2 "Ada"</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
-* EASY SHELL EXACUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
-* FFMPEG LATEST STABLE VERSION</br>
+* EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
+* ALL DEBIAN PACKAGES UPDATED</br>
+</hr>
+<h1>UPDATES FOR RASPBERRY Pi4 / Pi400</h3>
+* UBUNTU SERVER 20.04.3 LTS ARM64</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.2</br>
+* COMPILED WITH FFMPEG 4.2.4 "Ada"</br>
+* EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
+* EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
 * ALL DEBIAN PACKAGES UPDATED</br>
 </hr>
 <h1>NGINX-based Media Streaming Server Features</h1>
@@ -111,6 +115,9 @@ services:
       - "1935:1935"
 ```
 
+<a href="https://asciinema.org/a/fmvbm6OhgF1pUJgM0uSJz7S3o" target="_blank"><img src="https://asciinema.org/a/fmvbm6OhgF1pUJgM0uSJz7S3o.svg" /></a>
+Click the vid above to view the process of installing using Ubuntu Server Latest (Host) and Docker Compose.
+
 <h1>Downloading and Creating your container Using docker-compose (Debian image)</h1>
 
 <h2>Create a new Directory</h2>
@@ -149,7 +156,7 @@ services:
 ```
 
 <h2>To update the container with Docker Compose:</h2>
-<p># Pull the latest update</p>
+<p># Pull the latest image / update</p>
 
 ```
 docker-compose pull
@@ -161,8 +168,17 @@ docker-compose pull
 docker-compose up -d
 ```
 
-<p>Above docker command will pull the image, create, run and start the Docker Container / Streaming Server already configured with ports opened.</p>
+<p>Stop containers and removes containers, networks, volumes, and images created by up</p>
 
+```
+docker-compose down 
+```
+
+<p>Above docker command will pull the image, create, run and start the Docker Container / Streaming Server already configured with ports opened. </p>
+<p>IF YOU UPDATE THE DOCKER IMAGE TO A NEW VERSION, DOCKER COMPOSE WILL RECREATE THE DOCKER CONTAINER WITH THE NEW IMAGE UPDATES. </p>
+<p>WHEN DOCKER COMPOSE RECREATES THE DOCKER CONTAINER, ANY CONFIGS CHANGES MADE TO THE CONTAINER WILL BE DELETED </p>
+<p>AND REPLACE WITH THE IMAGES DEFAULTS. </p>
+<p>ALWAYS BACKUP YOUR CONTAINER CHANGES BEFORE UPDATING YOUR DOCKER IMAGE</p>
 
 <h2>Attach to the Running RTMP Docker Container</h2>
 
@@ -210,14 +226,18 @@ docker attach nginx-rtmp-server
 HOLD: CRTL + p + q 
 ```
 
+[![asciicast](https://asciinema.org/a/TQqFawEeYd1vs0oycUtXI3NRS.svg)](https://asciinema.org/a/TQqFawEeYd1vs0oycUtXI3NRS)
+
+<p>Check the Video Above to View How To Setup. Edit, and Restart Using The Bash Scripts Provided....</p>
+
 <p>Your docker streaming server is now started and running in the background...</p>
 <p>You can now connect to it, using your preferred streaming software. (obs studio, xsplit, vmix, streamlabs obs, etc)</p>
 
-<h1>Setting up main gaming computer to stream to NGINX / RTMP</h1>
-<p>Any ol Gaming PC with OBS Studio & NVENC encoding.</p>
+<h1>Setting up main computer to stream to NGINX / RTMP / FFMPEG</h1>
+<p>Any ol PC with OBS Studio & NVENC encoding.</p>
 <p>In OBS, i use NVENC encoding and I use my monitor’s native resolution (1080p).</p> 
 <p>Using OBS Studio, in your broadcast settings you need to use the “Custom” streaming service.</p>
-<a href=""><img src="https://m1-gamingz.com/wp-content/uploads/2021/03/Screenshot-2021-03-27-130647-live.png" alt="M1GC">
+<a href=""><img src="https://i.imgur.com/mLJoJbJ.png" alt="M1GC">
 </a>
 
 <p>The Streaming URL will be something like rtmp://192.168.1.100/live (Use your own server’s IP).</p>
