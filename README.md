@@ -10,14 +10,14 @@
 <h2><p>Based on Ubuntu Server 20.04.3 LTS ARM64 for Raspberry Pi4 / Pi400 </p></h2>
 </br>
 <h1>UPDATES FOR UBUNTU SERVER 20.04.3 LTS</h3>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.2</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.3</br>
 * COMPILED WITH FFMPEG 4.2.4 "Ada"</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
 * ALL UBUNTU PACKAGES UPDATED</br>
 </hr>
 <h1>UPDATES FOR DEBIAN 11 Bullseye</h3>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.2</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.3</br>
 * COMPILED WITH FFMPEG 4.4.2 "Ada"</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
@@ -25,7 +25,7 @@
 </hr>
 <h1>UPDATES FOR RASPBERRY Pi4 / Pi400</h3>
 * UBUNTU SERVER 20.04.3 LTS ARM64</br>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.2</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.3</br>
 * COMPILED WITH FFMPEG 4.2.4 "Ada"</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
@@ -103,20 +103,25 @@ nano docker-compose.yml
 ```
 version: "3"
 services:
-  nginx-rtmp-streaming-server:
-    image: murderousone/nginx-ffmpeg-rtmp:ubuntu-latest
-    container_name: nginx-rtmp-server
-    restart: unless-stopped
-    stdin_open: true
-    tty: true
-    ports:
-      - "80:80"
-      - "443:443"
-      - "1935:1935"
+  nginx-rtmp-streaming-server:
+    image: murderousone/nginx-ffmpeg-rtmp:ubuntu-latest
+    volumes:
+      - nginxconfig:/usr/local/nginx/conf/
+    container_name: m1gc-nginx-rtmp-server
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+      - "1935:1935"
+
+volumes:
+  nginxconfig:
 ```
 
-<a href="https://asciinema.org/a/fmvbm6OhgF1pUJgM0uSJz7S3o" target="_blank"><img src="https://asciinema.org/a/fmvbm6OhgF1pUJgM0uSJz7S3o.svg" /></a>
-Click the vid above to view the process of installing using Ubuntu Server Latest (Host) and Docker Compose.
+<a href="https://asciinema.org/a/fmvbm6OhgF1pUJgM0uSJz7S3o" target="_blank"><img src="https://asciinema.org/a/fmvbm6OhgF1pUJgM0uSJz7S3o.svg" /></a></br>
+<p>Click the vid above to view the process of installing using Ubuntu Server Latest (Host) and Docker Compose.</p>
 
 <h1>Downloading and Creating your container Using docker-compose (Debian image)</h1>
 
@@ -143,17 +148,65 @@ nano docker-compose.yml
 ```
 version: "3"
 services:
-  nginx-rtmp-streaming-server:
-    image: murderousone/nginx-ffmpeg-rtmp:debian-latest
-    container_name: nginx-rtmp-server
-    restart: unless-stopped
-    stdin_open: true
-    tty: true
-    ports:
-      - "80:80"
-      - "443:443"
-      - "1935:1935"
+  nginx-rtmp-streaming-server:
+    image: murderousone/nginx-ffmpeg-rtmp:debian-latest
+    volumes:
+      - nginxconfig:/usr/local/nginx/conf/
+    container_name: m1gc-nginx-rtmp-server
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+      - "1935:1935"
+
+volumes:
+  nginxconfig:
 ```
+<hr>
+<h2>Downloading and Creating your container Using docker-compose (Raspberry Pi4 Ubuntu Arm64 image)</h2>
+
+<h2>Create a new Directory</h2>
+
+```
+mkdir nginx-rtmp
+```
+
+<h2>Change Directory</h2>
+
+```
+cd nginx-rtmp
+```
+
+<h2>Create the docker compose file:</h2>
+
+```
+nano docker-compose.yml
+```
+
+<h2>COPY and PASTE the code below for Raspberry Pi Ubuntu OS Container and Save</h2>
+
+```
+version: "3"
+services:
+  nginx-rtmp-streaming-server:
+    image: murderousone/nginx-ffmpeg-rtmp:ubuntu-latest-arm64
+    volumes:
+      - nginxconfig:/usr/local/nginx/conf/
+    container_name: m1gc-nginx-rtmp-server
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+      - "1935:1935"
+
+volumes:
+  nginxconfig:
+```
+<hr>
 
 <h2>To update the container with Docker Compose:</h2>
 <p># Pull the latest image / update</p>
@@ -168,7 +221,7 @@ docker-compose pull
 docker-compose up -d
 ```
 
-<p>Stop containers and removes containers, networks, volumes, and images created by up</p>
+<p>Stop containers and removes containers, networks, and images created by up</p>
 
 ```
 docker-compose down 
@@ -176,9 +229,23 @@ docker-compose down
 
 <p>Above docker command will pull the image, create, run and start the Docker Container / Streaming Server already configured with ports opened. </p>
 <p>IF YOU UPDATE THE DOCKER IMAGE TO A NEW VERSION, DOCKER COMPOSE WILL RECREATE THE DOCKER CONTAINER WITH THE NEW IMAGE UPDATES. </p>
-<p>WHEN DOCKER COMPOSE RECREATES THE DOCKER CONTAINER, ANY CONFIGS CHANGES MADE TO THE CONTAINER WILL BE DELETED </p>
-<p>AND REPLACE WITH THE IMAGES DEFAULTS. </p>
-<p>ALWAYS BACKUP YOUR CONTAINER CHANGES BEFORE UPDATING YOUR DOCKER IMAGE</p>
+<p>WHEN DOCKER COMPOSE RECREATES THE DOCKER CONTAINER, ANY CONFIGS CHANGES MADE TO THE CONTAINER WILL NOT BE DELETED </p>
+<p>VOLUMES WILL BACKUP YOUR CONTAINER NGINX CHANGES AND WILL REQUIRE A VOLUME DELETE TO GO BACK TO DEFAULTS</p>
+<hr>
+
+<h2> List and Delete Volumes </h2>
+
+<h3> List Docker Volumes </h3>
+
+```
+docker volume ls
+```
+
+<h3> Delete Docker Volumes </h3>
+
+```
+docker volume rm volume_name volume_name
+```
 
 <h2>Attach to the Running RTMP Docker Container</h2>
 
