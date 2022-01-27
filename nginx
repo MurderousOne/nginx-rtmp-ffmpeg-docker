@@ -23,7 +23,7 @@
 # Provides:    nginx
 #
 # Author:  Mark Rodriguez
-#          <murderousoneent@gmail.com AT gmail.com>.
+#          <murderousoneent AT gmail.com>.
 #
 # Version: 1.0.0 31-MAY-2021 murderousoneent AT gmail.com
 # Notes: nginx init.d dash script for Ubuntu.
