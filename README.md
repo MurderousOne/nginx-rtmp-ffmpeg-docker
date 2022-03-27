@@ -1,8 +1,7 @@
 <h1>NGINX-based Media Streaming Server / RTMP / FFMPEG SERVER</h1>
 </hr>
-</h2>IMAGE WILL CONTAIN REALLY SIMPLE BASH SCRIPTS TO MAKE LIFE EASIER. NOTHING CODE SAVY</h2>
+</h2>LIGHTWEIGHT - IMAGE WILL CONTAIN REALLY SIMPLE BASH SCRIPTS TO MAKE LIFE EASIER. NOTHING CODE SAVY</h2>
 <p>THIS DOCKER IMAGE WILL WORK WITH 64 Bit Systems.</br>
-https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp
 <b>DOCKER IMAGE MAY NOT WORK WITH  32bit Systems.</b></br>
 <p>Image can be attached too and is fully customizable.</p>
 <p>Image has simple pre-installed bash scripts to make running the server easier.</p>
@@ -11,14 +10,14 @@ https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp
 <h2><p>Based on Ubuntu Server 20.04.3 LTS ARM64 for Raspberry Pi4 / Pi400 </p></h2>
 </br>
 <h1>UPDATES FOR UBUNTU SERVER 20.04.3 LTS</h3>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.3</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.6</br>
 * COMPILED WITH FFMPEG 4.2.4 "Ada"</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
 * ALL UBUNTU PACKAGES UPDATED</br>
 </hr>
 <h1>UPDATES FOR DEBIAN 11 Bullseye</h3>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.3</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.6</br>
 * COMPILED WITH FFMPEG 4.4.2 "Ada"</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
@@ -26,7 +25,7 @@ https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp
 </hr>
 <h1>UPDATES FOR RASPBERRY Pi4 / Pi400</h3>
 * UBUNTU SERVER 20.04.3 LTS ARM64</br>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.3</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.6</br>
 * COMPILED WITH FFMPEG 4.2.4 "Ada"</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
@@ -71,7 +70,7 @@ sudo sh get-docker.sh
 <h3>Install Docker Compose on Linux</h3>
 
 ```
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.0.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 <p><a href="https://docs.docker.com/compose/install/" target="_blank">To install Docker Compose on other non-Linux OS's </a></p>
@@ -120,9 +119,6 @@ services:
 volumes:
   nginxconfig:
 ```
-
-<a href="https://asciinema.org/a/fmvbm6OhgF1pUJgM0uSJz7S3o" target="_blank"><img src="https://asciinema.org/a/fmvbm6OhgF1pUJgM0uSJz7S3o.svg" /></a></br>
-<p>Click the vid above to view the process of installing using Ubuntu Server Latest (Host) and Docker Compose.</p>
 
 <h1>Downloading and Creating your container Using docker-compose (Debian image)</h1>
 
@@ -231,7 +227,7 @@ docker-compose down
 <p>Above docker command will pull the image, create, run and start the Docker Container / Streaming Server already configured with ports opened. </p>
 <p>IF YOU UPDATE THE DOCKER IMAGE TO A NEW VERSION, DOCKER COMPOSE WILL RECREATE THE DOCKER CONTAINER WITH THE NEW IMAGE UPDATES. </p>
 <p>WHEN DOCKER COMPOSE RECREATES THE DOCKER CONTAINER, ANY CONFIGS CHANGES MADE TO THE CONTAINER WILL NOT BE DELETED </p>
-<p>VOLUMES WILL BACKUP YOUR CONTAINER NGINX CHANGES AND WILL REQUIRE A VOLUME DELETE TO GO BACK TO DEFAULTS</p>
+<p>VOLUMES WILL BACKUP YOUR CONTAINER NGINX CHANGES AND WILL REQUIRE A VOLUME DELETE TO GO BACK TO DEFAULTS BUT IS OPTIONAL</p>
 <hr>
 
 <h2> List and Delete Volumes </h2>
@@ -248,16 +244,25 @@ docker volume ls
 docker volume rm volume_name volume_name
 ```
 
-<h2>Attach to the Running RTMP Docker Container</h2>
+<h2>YOU CAN EXECUTE THE SCRIPTS FROM OUTSIDE THE CONTAINER WITHOUT ATTACHING USING DOCKER EXEC</h2>
+
+```
+docker exec  nginx-rtmp-server ./restart-rtmp
+```
+
+<h2>OR Attach to the Running RTMP Docker Container</h2>
+<p>NOTE: I LIKE TO KEEP THE IMAGE COMPLETELY TRANSPARENT / INSPECTABLE / ATTACHABLE / SIMPLE
+U CAN EDIT, UPDATE, INSPECT THE FULL OS / MAKE ANY CHANGES OF YOUR OWN.</p>
 
 ```
 docker attach nginx-rtmp-server
 ```
 
-<h2>To Update the server packages on the NGINX / RTMP Docker Container</h2>
+<h2>To Update the server packages on the NGINX / RTMP Docker Container
+</h2>
 
 ```
-./update
+./upgrade
 ```
 
 <h2>Edit and Add your Stream Key and URL's & Set your RTMP Servers Stream Key to the RTMP Config</h2>
@@ -269,6 +274,8 @@ docker attach nginx-rtmp-server
 ```
 ./edit-rtmp
 ```
+<h5> NOTE: Must be attached to container to edit.</h5>
+
 
 <h2>START THE RTMP SERVER</h2>
 
@@ -293,6 +300,10 @@ docker attach nginx-rtmp-server
 ```
 HOLD: CRTL + p + q 
 ```
+
+<hr>
+
+<h2>VIDEO ON HOW TO INSTALL, EDIT AND RESTART USING BASH SCRIPTS</h2>
 
 [![asciicast](https://asciinema.org/a/TQqFawEeYd1vs0oycUtXI3NRS.svg)](https://asciinema.org/a/TQqFawEeYd1vs0oycUtXI3NRS)
 
