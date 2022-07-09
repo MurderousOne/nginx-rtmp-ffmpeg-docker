@@ -1,5 +1,5 @@
 <h1>NGINX-based Media Streaming Server / RTMP / FFMPEG SERVER</h1>
-(https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp){:target="_blank" rel="noopener"}
+(https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp)
 </br>
 </hr>
 </h2>LIGHTWEIGHT - IMAGE WILL CONTAIN REALLY SIMPLE BASH SCRIPTS TO MAKE LIFE EASIER. </br>NOTHING CODE SAVY</h2>
