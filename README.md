@@ -1,7 +1,8 @@
 <h1>NGINX-based Media Streaming Server / RTMP / FFMPEG SERVER</h1>
-[go](https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp){:target="_blank" rel="noopener"}</br>
+(https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp){:target="_blank" rel="noopener"}
+</br>
 </hr>
-</h2>LIGHTWEIGHT - IMAGE WILL CONTAIN REALLY SIMPLE BASH SCRIPTS TO MAKE LIFE EASIER. NOTHING CODE SAVY</h2>
+</h2>LIGHTWEIGHT - IMAGE WILL CONTAIN REALLY SIMPLE BASH SCRIPTS TO MAKE LIFE EASIER. </br>NOTHING CODE SAVY</h2>
 <p>THIS DOCKER IMAGE WILL WORK WITH 64 Bit Systems.</br>
 <b>DOCKER IMAGE MAY NOT WORK WITH  32bit Systems.</b></br>
 <p>Image can be attached too and is fully customizable.</p>
