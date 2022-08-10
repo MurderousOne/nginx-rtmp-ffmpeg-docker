@@ -1,34 +1,26 @@
 <h1>NGINX-based Media Streaming Server / RTMP / FFMPEG SERVER</h1>
 (https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp)
-</br>
+
 </hr>
-</h2>LIGHTWEIGHT - IMAGE WILL CONTAIN REALLY SIMPLE BASH SCRIPTS TO MAKE LIFE EASIER. </br>NOTHING CODE SAVY</h2>
+</h2>LIGHTWEIGHT - IMAGE WILL CONTAIN REALLY SIMPLE BASH SCRIPTS TO MAKE LIFE EASIER. NOTHING CODE SAVY</h2>
 <p>THIS DOCKER IMAGE WILL WORK WITH 64 Bit Systems.</br>
 <b>DOCKER IMAGE MAY NOT WORK WITH  32bit Systems.</b></br>
 <p>Image can be attached too and is fully customizable.</p>
 <p>Image has simple pre-installed bash scripts to make running the server easier.</p>
-<h2><p>Based on Ubuntu Server 22.04 LTS 64 Bit </p></h2>
-<h2><p>Based on Debian 11 Bullseye 64 Bit </p></h2>
-<h2><p>Based on Ubuntu Server 20.04.3 LTS ARM64 for Raspberry Pi4 / Pi400 </p></h2>
+<h2><p>Based on Ubuntu Server Latest LTS 64 Bit </p></h2>
+<h2><p>Based on Ubuntu Server Latest LTS ARM64 for Raspberry Pi4 / Pi400 </p></h2>
 </br>
-<h1>UPDATES FOR UBUNTU SERVER 22.04 LTS</h3>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.23.0</br>
-* COMPILED WITH FFMPEG 4.4.2 </br>
+<h1>UPDATES FOR UBUNTU SERVER LATEST LTS</h3>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.23.1</br>
+* COMPILED WITH FFMPEG 5.1 - use image tag: ubuntu-latest</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
 * ALL UBUNTU PACKAGES UPDATED</br>
 </hr>
-<h1>UPDATES FOR DEBIAN 11 Bullseye</h3>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.6</br>
-* COMPILED WITH FFMPEG 4.3.2 </br>
-* EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
-* EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
-* ALL DEBIAN PACKAGES UPDATED</br>
-</hr>
 <h1>UPDATES FOR RASPBERRY Pi4 / Pi400</h3>
-* UBUNTU SERVER 20.04.3 LTS ARM64</br>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.21.6</br>
-* COMPILED WITH FFMPEG 4.2.4 </br>
+* UBUNTU SERVER LATEST LTS ARM64</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.23.1</br>
+* COMPILED WITH FFMPEG 5.1</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
 * ALL DEBIAN PACKAGES UPDATED</br>
@@ -103,7 +95,7 @@ nano docker-compose.yml
 <p>COPY and PASTE the code below for Ubuntu OS Container and Save</p>
 
 ```
-version: "3"
+version: "3.8"
 services:
   nginx-rtmp-streaming-server:
     image: murderousone/nginx-ffmpeg-rtmp:ubuntu-latest
@@ -122,47 +114,7 @@ volumes:
   nginxconfig:
 ```
 
-<h1>Downloading and Creating your container Using docker-compose (Debian image)</h1>
 
-<h2>Create a new Directory</h2>
-
-```
-mkdir nginx-rtmp
-```
-
-<h2>Change Directory</h2>
-
-```
-cd nginx-rtmp
-```
-
-<h2>Create the docker compose file:</h2>
-
-```
-nano docker-compose.yml
-```
-
-<p>COPY and PASTE the code below for Debian OS Container and Save</p>
-
-```
-version: "3"
-services:
-  nginx-rtmp-streaming-server:
-    image: murderousone/nginx-ffmpeg-rtmp:debian-latest
-    volumes:
-      - nginxconfig:/usr/local/nginx/conf/
-    container_name: m1gc-nginx-rtmp-server
-    restart: unless-stopped
-    stdin_open: true
-    tty: true
-    ports:
-      - "80:80"
-      - "443:443"
-      - "1935:1935"
-
-volumes:
-  nginxconfig:
-```
 <hr>
 <h2>Downloading and Creating your container Using docker-compose (Raspberry Pi4 Ubuntu Arm64 image)</h2>
 
@@ -187,10 +139,10 @@ nano docker-compose.yml
 <h2>COPY and PASTE the code below for Raspberry Pi Ubuntu OS Container and Save</h2>
 
 ```
-version: "3"
+version: "3.8"
 services:
   nginx-rtmp-streaming-server:
-    image: murderousone/nginx-ffmpeg-rtmp:ubuntu-latest-arm64
+    image: murderousone/nginx-ffmpeg-rtmp:ubuntu-arm64
     volumes:
       - nginxconfig:/usr/local/nginx/conf/
     container_name: m1gc-nginx-rtmp-server
@@ -272,7 +224,7 @@ docker attach nginx-rtmp-server
 <p>(Example: - Change -> push rtmp://live.restream.io/streamkey;)</p>
 <p>SETTING RTMP SERVERS STREAM KEY  (Can be named anything, No spaces.)</h2>
 <p>(EXAMPLE: Change -> rtmp://127.0.0.1/live/YOURSTREAMKEY to rtmp://127.0.0.1/live/ANY-KEYNAME-YOU-WANT)</p>
-
+<img src"https://m1-gamingz.com/wp-content/uploads/2021/03/Screenshot-2021-03-27-130647-live.png"></img>
 ```
 ./edit-rtmp
 ```
