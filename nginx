@@ -25,9 +25,9 @@
 # Author:  Mark Rodriguez
 #          <murderousoneent AT gmail.com>.
 #
-# Version: 1.0.0 31-MAY-2021 murderousoneent AT gmail.com
+# Version: 1.0.1 10-AUGUST-2022 murderousoneent AT gmail.com
 # Notes: nginx init.d dash script for Ubuntu.
-# Tested with: Ubuntu 20.04.3 LTS, nginx-1.21.6
+# Tested with: Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-46-generic x86_64), nginx-1.23.1
 #
 # This script's project home is:
 #   https://github.com/MurderousOne
@@ -36,7 +36,7 @@
 #                               MIT X11 License
 #------------------------------------------------------------------------------
 #
-# Copyright (c) 2012-2022 Mark Rodriguez, http://m1gc.m1-gamingz.com
+# Copyright (c) 2012-2022 Mark Rodriguez, https://m1-serverz.com
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
