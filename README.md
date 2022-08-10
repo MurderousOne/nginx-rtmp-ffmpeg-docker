@@ -1,9 +1,8 @@
 <h1>NGINX-based Media Streaming Server / RTMP / FFMPEG SERVER</h1></br>
 (https://hub.docker.com/r/murderousone/nginx-ffmpeg-rtmp)
 </br>
-<p>THIS DOCKER IMAGE MAY NOT WORK WITH 32 Bit Systems.</br>
+<p>NOTE: THIS DOCKER IMAGE MAY NOT WORK WITH 32 Bit Systems.</br>
 </hr>
-</h2>
 </br>
 <p>THIS DOCKER IMAGE WILL WORK WITH 64 Bit Systems.</br>LIGHTWEIGHT - IMAGE WILL CONTAIN REALLY SIMPLE BASH SCRIPTS TO MAKE LIFE EASIER. NOTHING CODE SAVY</h2></br>
 <b>DOCKER IMAGE MAY NOT WORK WITH  32bit Systems.</b></br>
