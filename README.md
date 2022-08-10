@@ -83,13 +83,13 @@ mkdir nginx-rtmp
 
 <h2>Create a Docker Compose file inside your new directory:</h2>
 <p>(example: docker-compose.yml)</p>
-​
+
 <h2>Change Directory</h2>
 
 ```
 cd nginx-rtmp
 ```
-​
+
 <h3>Create the docker compose file:</h3>
 
 ```
@@ -229,9 +229,11 @@ docker attach nginx-rtmp-server
 <p>SETTING RTMP SERVERS STREAM KEY  (Can be named anything, No spaces.)</h2>
 <p>(EXAMPLE: Change -> rtmp://127.0.0.1/live/YOURSTREAMKEY to rtmp://127.0.0.1/live/ANY-KEYNAME-YOU-WANT)</p>
 <img src"https://m1-gamingz.com/wp-content/uploads/2021/03/Screenshot-2021-03-27-130647-live.png"></img>
+
 ```
 ./edit-rtmp
 ```
+
 <h5> NOTE: Must be attached to container to edit.</h5>
 
 
