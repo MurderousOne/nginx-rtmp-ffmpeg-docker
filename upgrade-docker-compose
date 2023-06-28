@@ -1,2 +1,4 @@
 #!/bin/bash
+## SHELL SCRIPT CAN BE USED TO UPGRADE DOCKER COMPOSE FROM DOCKER HOST
+# CAN BE ADDED ASS A CRONJOB TO AUTO UPGRADE COMPOSE ON STARTUP OR BY SCHEDULE
 LATEST=$(curl -Ls -w %{url_effective} -o /dev/null https://github.com/docker/compose/releases/latest) && LATEST=${LATEST##*/} && curl -L https://github.com/docker/compose/releases/download/$LATEST/docker-compose-$(uname -s)-$(uname -m) > /usr/local/bin/docker-compose
