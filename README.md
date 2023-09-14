@@ -11,7 +11,7 @@
 <h2><p>Based on Ubuntu Server Latest LTS ARM64 for Raspberry Pi4 / Pi400 </p></h2>
 </br>
 <h1>UPDATES FOR UBUNTU SERVER LATEST LTS</h3>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.25.1</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.25.2</br>
 * COMPILED WITH FFMPEG Version 6.0 - use image tag: ubuntu-latest</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
@@ -64,7 +64,7 @@ sudo sh get-docker.sh
 <h3>Install Docker Compose on Linux</h3>
 
 ```
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 <p><a href="https://docs.docker.com/compose/install/" target="_blank">To install Docker Compose on other non-Linux OS's </a></p>
