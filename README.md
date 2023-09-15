@@ -3,7 +3,7 @@
 </br>
 </hr>
 <p>THIS DOCKER IMAGE WILL WORK WITH 64 Bit Systems.</br>
-<h2>LIGHTWEIGHT - IMAGE WILL CONTAIN REALLY SIMPLE BASH SCRIPTS TO MAKE LIFE EASIER. NOTHING CODE SAVY</h2></br>
+<h2>LIGHTWEIGHT - IMAGE WILL CONTAIN REALLY SIMPLE SHELL SCRIPTS TO MAKE LIFE EASIER. NOTHING CODE SAVY</h2></br>
 <b>DOCKER IMAGE MAY NOT WORK WITH  32bit Systems.</b></br>
 <p>Image can be attached too and is fully customizable.</p>
 <p>Image has simple pre-installed bash scripts to make running the server easier.</p>
