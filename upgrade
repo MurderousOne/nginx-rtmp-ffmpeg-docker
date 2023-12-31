@@ -1,3 +1,5 @@
 #!/bin/bash
+## SCRIPT IS USED TO UPDATE ALL PACKACKES, REMOVE ANY UNUSED PACKAGED INSTALLED ##
+## CLEAN PACKAGE MANAGER CACHE AND USED IN DOCKER IMAGE / CONTAINER ##
 
 apt update && apt -y upgrade && apt -y autoremove && apt clean
