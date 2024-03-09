@@ -11,16 +11,16 @@
 <h2><p>Based on Ubuntu Server Latest LTS ARM64 for Raspberry Pi4 / Pi400 </p></h2>
 </br>
 <h1>UPDATES FOR UBUNTU SERVER LATEST LTS</h3>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.25.3</br>
-* COMPILED WITH FFMPEG Version 6.1 - use image tag: ubuntu-latest</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.25.4</br>
+* COMPILED WITH FFMPEG Version 6.1.1 - use image tag: ubuntu-latest</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
 * ALL UBUNTU PACKAGES UPDATED</br>
 </hr>
 <h1>UPDATES FOR RASPBERRY Pi4 / Pi400</h3>
 * UBUNTU SERVER LATEST LTS ARM64</br>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.25.3</br>
-* COMPILED WITH FFMPEG 6.1 - use image tag: ubuntu-arm64</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.25.4</br>
+* COMPILED WITH FFMPEG 6.1.1 - use image tag: ubuntu-arm64</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
 * ALL UBUNTU ARM64 PACKAGES UPDATED</br>
@@ -64,7 +64,7 @@ sudo sh get-docker.sh
 <h3>Install Docker Compose on Linux</h3>
 
 ```
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.24.7/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 <p><a href="https://docs.docker.com/compose/install/" target="_blank">To install Docker Compose on other non-Linux OS's </a></p>
