@@ -139,7 +139,6 @@ nano docker-compose.yml
 <h2>COPY and PASTE the code below for Raspberry Pi Ubuntu OS Container and Save</h2>
 
 ```
-version: "3.8"
 services:
   nginx-rtmp-streaming-server:
     image: murderousone/nginx-ffmpeg-rtmp:ubuntu-arm64
