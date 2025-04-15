@@ -25,9 +25,9 @@
 # Author:  Mark Rodriguez
 #          <murderousoneent AT gmail.com>.
 #
-# Version: 1.0.4 31-DECEMBER-2024 murderousoneent AT gmail.com
+# Version: 2.0  15-APRIL-2025 murderousoneent AT gmail.com
 # Notes: nginx init.d dash script for Ubuntu.
-# Tested with: Ubuntu 22.04.4 LTS (Ubuntu 22.04.4 LTS (GNU/Linux 5.15.0-101-generic x86_64), nginx-1.25.4
+# Tested with: Ubuntu 22.04.4 LTS (Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-136-generic x86_64), nginx-1.27.4
 #
 # This script's project home is:
 #   https://github.com/MurderousOne
