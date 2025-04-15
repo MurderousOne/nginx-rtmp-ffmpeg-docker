@@ -95,7 +95,6 @@ nano docker-compose.yml
 <p>COPY and PASTE the code below for Ubuntu OS Container and Save</p>
 
 ```
-version: "3.8"
 services:
   nginx-rtmp-streaming-server:
     image: murderousone/nginx-ffmpeg-rtmp:ubuntu-latest
@@ -307,4 +306,4 @@ HOLD: CRTL + p + q
 * Proved to work with Wirecast, FMS, Wowza, JWPlayer, FlowPlayer, StrobeMediaPlayback, ffmpeg, avconv, rtmpdump, flvstreamer and many more
 * Statistics in XML/XSL in machine- & human- readable form
 
-ENJOY! 
+ENJOY!
