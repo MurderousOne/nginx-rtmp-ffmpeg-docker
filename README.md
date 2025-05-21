@@ -9,9 +9,10 @@
 <p>Image has simple pre-installed bash scripts to make running the server easier.</p>
 <h2><p>Based on Ubuntu Server Latest LTS 64 Bit </p></h2>
 <h2><p>Based on Ubuntu Server Latest LTS ARM64 for Raspberry Pi4 / Pi400 </p></h2>
+<hr>
 </br>
 <h1>UPDATES FOR UBUNTU SERVER LATEST LTS</h3>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.27.4</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.28.0</br>
 * COMPILED WITH FFMPEG Version 7.1.1 - use image tag: ubuntu-latest</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
@@ -19,7 +20,7 @@
 </hr>
 <h1>UPDATES FOR RASPBERRY Pi4 / Pi400</h3>
 * UBUNTU SERVER LATEST LTS ARM64</br>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.27.4</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.28.0</br>
 * COMPILED WITH FFMPEG 7.1.1 - use image tag: ubuntu-arm64</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
@@ -228,13 +229,12 @@ docker attach nginx-rtmp-server
 ```
 ./edit-rtmp
 ```
+<h5> NOTE: Must be attached to container to edit.</h5>
+
 <p>If you wish to use FFMPEG</p></br>
 <b>FFMPEG LOCATION: </br></br>
 <b>/usr/bin/ffmpeg</b> </br>
 <b>/usr/share/ffmpeg</b> 
-
-<h5> NOTE: Must be attached to container to edit.</h5>
-
 
 <h2>START THE RTMP SERVER</h2>
 
@@ -293,17 +293,5 @@ HOLD: CRTL + p + q
 <h3>AUDIO</h3>
 
 <p>As for Audio encoding, I use the AAC codec, 160 bit rate and a Format of 44 or 48 Khz.</p>
-
-* RTMP Video on demand FLV/MP4, playing from local filesystem or HTTP
-* Stream relay support for distributed streaming: push & pull models
-* Recording streams in multiple FLVs
-* H264/AAC support
-* Online transcoding with FFmpeg
-* HTTP callbacks (publish/play/record/update etc)
-* Running external programs on certain events (exec)
-* HTTP control module for recording audio/video and dropping clients
-* Advanced buffering techniques to keep memory allocations at a minimum level for faster streaming and low memory footprint
-* Proved to work with Wirecast, FMS, Wowza, JWPlayer, FlowPlayer, StrobeMediaPlayback, ffmpeg, avconv, rtmpdump, flvstreamer and many more
-* Statistics in XML/XSL in machine- & human- readable form
 
 ENJOY!
