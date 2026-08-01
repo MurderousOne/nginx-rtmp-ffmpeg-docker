@@ -7,8 +7,18 @@
 <b>DOCKER IMAGE MAY NOT WORK WITH  32bit Systems.</b></br>
 <p>Image can be attached too and container is fully customizable.</p>
 <p>Image has simple pre-installed bash scripts to make running the server easier.</p>
+<h2><p>Based on Ubuntu Server 25.04 LTS 64 Bit </p></h2>
 <h2><p>Based on Ubuntu Server Latest LTS 64 Bit </p></h2>
 <h2><p>Based on Ubuntu Server Latest LTS ARM64 for Raspberry Pi4 / Pi400 </p></h2>
+<hr>
+</br>
+<h1>UPDATES FOR UBUNTU SERVER 25.04 LTS</h3>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.31.3</br>
+* COMPILED WITH FFMPEG Version 8.1.2 - use image tag: ubuntu-latest</br>
+* EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
+* EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
+* ALL UBUNTU PACKAGES UPDATED</br>
+</hr>
 <hr>
 </br>
 <h1>UPDATES FOR UBUNTU SERVER LATEST LTS</h3>
