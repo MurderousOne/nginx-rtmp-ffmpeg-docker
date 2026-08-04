@@ -7,31 +7,29 @@
 <b>DOCKER IMAGE MAY NOT WORK WITH  32bit Systems.</b></br>
 <p>Image can be attached too and container is fully customizable.</p>
 <p>Image has simple pre-installed bash scripts to make running the server easier.</p>
-<h2><p>Based on Ubuntu Server 25.04 LTS 64 Bit </p></h2>
 <h2><p>Based on Ubuntu Server Latest LTS 64 Bit </p></h2>
 <h2><p>Based on Ubuntu Server Latest LTS ARM64 for Raspberry Pi4 / Pi400 </p></h2>
 <hr>
 </br>
-<h1>UPDATES FOR UBUNTU SERVER 25.04 LTS</h3>
+<h1>UPDATES FOR UBUNTU SERVER 26.04 LTS</h3>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.31.3</br>
+* COMPILED WITH FFMPEG Version 8.1.2 - use image tag: ubuntu-25.04</br>
+* EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
+* EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
+* ALL UBUNTU PACKAGES UPDATED</br>
+</hr>
+</br>
+<h1>UPDATES FOR UBUNTU SERVER LATEST LTS</h3>
 * COMPILED WITH NGINX RTMP MODULE - NGINX v1.31.3</br>
 * COMPILED WITH FFMPEG Version 8.1.2 - use image tag: ubuntu-latest</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
 * ALL UBUNTU PACKAGES UPDATED</br>
 </hr>
-<hr>
-</br>
-<h1>UPDATES FOR UBUNTU SERVER LATEST LTS</h3>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.28.0</br>
-* COMPILED WITH FFMPEG Version 7.1.1 - use image tag: ubuntu-latest</br>
-* EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
-* EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
-* ALL UBUNTU PACKAGES UPDATED</br>
-</hr>
-<h1>UPDATES FOR RASPBERRY Pi4 / Pi400</h3>
+<h1>UPDATES FOR RASPBERRY PI</h3>
 * UBUNTU SERVER LATEST LTS ARM64</br>
-* COMPILED WITH NGINX RTMP MODULE - NGINX v1.28.0</br>
-* COMPILED WITH FFMPEG 7.1.1 - use image tag: ubuntu-arm64</br>
+* COMPILED WITH NGINX RTMP MODULE - NGINX v1.31.3</br>
+* COMPILED WITH FFMPEG 8.1.2 - use image tag: ubuntu-arm64</br>
 * EASY INIT SCRIPT FOR NGINX START, RESTART, STOP</br>
 * EASY SHELL EXECUTABLE SCRIPTS FOR EDITING, NGINX START, RESTART, STOP AND EASIER MANAGING YOUR RTMP SERVER</br>
 * ALL UBUNTU ARM64 PACKAGES UPDATED</br>
@@ -75,7 +73,7 @@ sudo sh get-docker.sh
 <h3>Install Docker Compose on Linux</h3>
 
 ```
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.36.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v5.3.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 <p><a href="https://docs.docker.com/compose/install/" target="_blank">To install Docker Compose on other non-Linux OS's </a></p>
@@ -102,6 +100,30 @@ cd nginx-rtmp
 ```
 nano docker-compose.yml
 ```
+
+<h1>FOR UBUNTU SERVER 26.04</h1>
+<p>COPY and PASTE the code below for Ubuntu OS Container and Save</p>
+
+```
+services:
+  nginx-rtmp-streaming-server:
+    image: murderousone/nginx-ffmpeg-rtmp:ubuntu-26.04
+    volumes:
+      - nginxconfig:/usr/local/nginx/conf/
+    container_name: m1gc-nginx-rtmp-server
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+      - "1935:1935"
+
+volumes:
+  nginxconfig:
+```
+
+<h1>FOR UBUNTU LATEST</h1>
 
 <p>COPY and PASTE the code below for Ubuntu OS Container and Save</p>
 
@@ -182,7 +204,7 @@ docker-compose up -d
 ```
 <a href="https://asciinema.org/a/422102" target="_blank"><img src="https://asciinema.org/a/422102.svg" /></a>
 
-<p>Stop containers and removes containers, networks, and images created by up</p>
+<h1><p>Stop containers and removes containers, networks, and images created by up</p></h1>
 
 ```
 docker-compose down 
@@ -242,9 +264,13 @@ docker attach nginx-rtmp-server
 <h5> NOTE: Must be attached to container to edit.</h5>
 
 <p>If you wish to use FFMPEG</p></br>
-<b>FFMPEG LOCATION: </br></br>
-<b>/usr/bin/ffmpeg</b> </br>
-<b>/usr/share/ffmpeg</b> 
+<b></br>
+<h1>FFMPEG LOCATION: </h1>
+
+```/usr/bin/ffmpeg```
+```/usr/share/ffmpeg```
+
+<b>
 
 <h2>START THE RTMP SERVER</h2>
 
